@@ -1,0 +1,34 @@
+[
+  {
+    "dialogue_id": "1_00000",
+    "services": [],
+    "turns": [
+      {
+        "frames": [
+          {
+            "actions": [],
+            "slots": [],
+            "service": "Restaurants_1",
+            "state": {
+              "active_intent": "",
+              "requested_slots": [],
+              "slot_values": {}
+            }
+          },
+          {
+            "actions": [],
+            "slots": [],
+            "service": "Flights_3",
+            "state": {
+              "active_intent": "",
+              "requested_slots": [],
+              "slot_values": {}
+            }
+          }
+        ],
+        "speaker": "USER",
+        "utterance": "Hi, could you get me a booking on the 8th please?"
+      }
+    ]
+  }
+]

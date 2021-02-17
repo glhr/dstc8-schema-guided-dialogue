@@ -1,0 +1,209 @@
+[
+  {
+    "service_name": "Restaurants_1",
+    "description": "A general service for finding and booking restaurants or flights",
+    "slots": [
+      {
+        "name": "passengers",
+        "description": "Number of passengers to find flight seats for",
+        "is_categorical": true,
+        "possible_values": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      {
+        "name": "flight_class",
+        "description": "Fare class of flight booking",
+        "is_categorical": true,
+        "possible_values": [
+          "Economy",
+          "Premium Economy",
+          "Business",
+          "First Class"
+        ]
+      },
+      {
+        "name": "origin_city",
+        "description": "City in which the journey originates",
+        "is_categorical": false,
+        "possible_values": []
+      },
+      {
+        "name": "destination_city",
+        "description": "City in which the journey ends",
+        "is_categorical": false,
+        "possible_values": []
+      },
+      {
+        "name": "origin_airport_name",
+        "description": "Number of the airport flying out from",
+        "is_categorical": false,
+        "possible_values": []
+      },
+      {
+        "name": "destination_airport_name",
+        "description": "Number of the airport flying to",
+        "is_categorical": false,
+        "possible_values": []
+      },
+      {
+        "name": "departure_date",
+        "description": "Date of departure flight",
+        "is_categorical": false,
+        "possible_values": []
+      },
+      {
+        "name": "return_date",
+        "description": "Date of return flight",
+        "is_categorical": false,
+        "possible_values": []
+      },
+      {
+        "name": "number_stops",
+        "description": "Number of stops in the itinerary",
+        "is_categorical": true,
+        "possible_values": [
+          "0",
+          "1"
+        ]
+      },
+      {
+        "name": "outbound_departure_time",
+        "description": "Local time of departure of flight from origin to destination",
+        "is_categorical": false,
+        "possible_values": []
+      },
+      {
+        "name": "outbound_arrival_time",
+        "description": "Local time of arrival of flight from origin to destination",
+        "is_categorical": false,
+        "possible_values": []
+      },
+      {
+        "name": "inbound_arrival_time",
+        "description": "Local time of arrival of flight from destination to origin",
+        "is_categorical": false,
+        "possible_values": []
+      },
+      {
+        "name": "inbound_departure_time",
+        "description": "Local time of departure of flight from destination to origin",
+        "is_categorical": false,
+        "possible_values": []
+      },
+      {
+        "name": "price",
+        "description": "Price per passenger of the itinerary",
+        "is_categorical": false,
+        "possible_values": []
+      },
+      {
+        "name": "number_checked_bags",
+        "description": "Number of bags to check in",
+        "is_categorical": true,
+        "possible_values": [
+          "0",
+          "1",
+          "2"
+        ]
+      },
+      {
+        "name": "airlines",
+        "description": "Name of airline operating the flight",
+        "is_categorical": true,
+        "possible_values": [
+          "United Airlines",
+          "American Airlines",
+          "Delta Airlines",
+          "Southwest Airlines",
+          "Alaska Airlines",
+          "British Airways",
+          "Air Canada",
+          "Air France"
+        ]
+      },
+      {
+        "name": "arrives_next_day",
+        "description": "Whether the flight arrives the next day",
+        "is_categorical": true,
+        "possible_values": [
+          "True",
+          "False"
+        ]
+      }
+    ],
+    "intents": [
+      {
+        "name": "SearchOnewayFlight",
+        "description": "Search for one-way flights to the destination of choice",
+        "is_transactional": false,
+        "required_slots": [
+          "origin_city",
+          "destination_city",
+          "departure_date"
+        ],
+        "optional_slots": {
+          "airlines": "dontcare",
+          "passengers": "1",
+          "flight_class": "Economy",
+          "number_checked_bags": "0"
+        },
+        "result_slots": [
+          "passengers",
+          "flight_class",
+          "origin_city",
+          "destination_city",
+          "origin_airport_name",
+          "destination_airport_name",
+          "departure_date",
+          "number_stops",
+          "outbound_departure_time",
+          "outbound_arrival_time",
+          "price",
+          "number_checked_bags",
+          "airlines",
+          "arrives_next_day"
+        ]
+      },
+      {
+        "name": "SearchRoundtripFlights",
+        "description": "Search for round-trip flights to the destination of choice",
+        "is_transactional": false,
+        "required_slots": [
+          "origin_city",
+          "destination_city",
+          "departure_date",
+          "return_date"
+        ],
+        "optional_slots": {
+          "airlines": "dontcare",
+          "passengers": "1",
+          "flight_class": "Economy",
+          "number_checked_bags": "0"
+        },
+        "result_slots": [
+          "passengers",
+          "flight_class",
+          "origin_city",
+          "destination_city",
+          "origin_airport_name",
+          "destination_airport_name",
+          "departure_date",
+          "return_date",
+          "number_stops",
+          "outbound_departure_time",
+          "outbound_arrival_time",
+          "inbound_arrival_time",
+          "inbound_departure_time",
+          "price",
+          "number_checked_bags",
+          "airlines",
+          "arrives_next_day"
+        ]
+      }
+    ]
+  }
+]
